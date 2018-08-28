@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
+//
+import config from './config';
 
 export default () => {
   mongoose.Promise = global.Promise;
-  mongoose.connect('mongodb://admin:admin1234@ds133632.mlab.com:33632/meetup');
+  mongoose.connect(config.DB_URL);
+  mongoose.set('debug', true);  
   mongoose.connection
     .once('open', () => { console.log('Connected to mongodb'); })
     .on('err', err => console.error(err));

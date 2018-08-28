@@ -1,6 +1,6 @@
 ## Reference
 - React-Native & Node Tutorial - Build a Meetup app
-
+    - https://github.com/EQuimper/youtubeMeetupAppReactNativeNode
 
 
 
@@ -14,3 +14,18 @@
 
     npm i nodemon -D
 ```
+
+
+## ESLint
+```
+    npm i -D eslint-config-equimper
+```
+
+## Auth
+- setup
+```
+```
+- passport
+
+- 
+

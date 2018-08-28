@@ -28,8 +28,10 @@ GroupShema.static.addMeetup = async function (id, args) {
   const Meetup = mongoose.model('Meetup');
   const group = await this.findById(id);
   const meetup = await new Meetup({ ...args, group });
-
-
+  console.log(meetup); // contains whole group object
+  group.meetups.push(meetup);
+  const result = await Promise.all([meetup.save(), group.save()]);
+  return result;
 };
 
 export default mongoose.model('Group', GroupShema);
