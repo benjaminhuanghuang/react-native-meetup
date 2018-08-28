@@ -4,7 +4,7 @@ import dbConfig from './config/db';
 import middlewareConfig from './config/middlewares';
 
 //
-import { MeetupRoutes } from './modules';
+import { MeetupRoutes, GroupRoutes } from './modules';
 
 const PORT = process.env.PORT || 8964;
 
@@ -13,7 +13,7 @@ dbConfig();
 const app = express();
 middlewareConfig(app);
 
-app.use('/api', [MeetupRoutes]);
+app.use('/api', [MeetupRoutes, GroupRoutes]);
 
 app.listen(PORT, err => {
   if (err) {
