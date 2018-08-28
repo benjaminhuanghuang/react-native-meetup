@@ -1,5 +1,9 @@
 import express from 'express';
 
+import dbConfig from './config/db';
+
+dbConfig();
+
 const app = express();
 const PORT = process.env.PORT || 8964;
 
