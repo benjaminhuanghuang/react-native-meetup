@@ -24,6 +24,7 @@
 ## Auth
 - setup
 ```
+    npm i -S passport passport-jwt jsonwebtoken
 ```
 - passport
 
