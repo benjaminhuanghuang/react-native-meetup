@@ -2,7 +2,7 @@ import Group from './model';
 
 export const createGroup = async (req, res) => {
   const { name, description, category } = req.body;
-  
+
   // Validation for name
   if (!name) {
     return res.status(400).json({
@@ -38,7 +38,7 @@ export const createGroup = async (req, res) => {
       message: 'Description must have 5 characters long',
     });
   }
-  
+
   const newGroup = new Group({ name, description });
 
   try {
@@ -53,3 +53,55 @@ export const createGroup = async (req, res) => {
     });
   }
 };
+
+export const createGroupMeetup = async (req, res) => {
+  const { title, description } = req.body; // meetup 
+  const { groupId } = req.params;
+
+  // Validation for name
+  if (!title) {
+    return res.status(400).json({
+      error: true,
+      message: 'Title must be provided',
+    });
+  } else if (typeof title !== 'string') {
+    return res.status(400).json({
+      error: true,
+      message: 'Title must be a string',
+    });
+  } else if (title.length < 5) {
+    return res.status(400).json({
+      error: true,
+      message: 'Title must have 5 characters long',
+    });
+  }
+  // Validation for description
+  if (!description) {
+    return res.status(400).json({
+      error: true,
+      message: 'Description must be provided',
+    });
+  } else if (typeof description !== 'string') {
+    return res.status(400).json({
+      error: true,
+      message: 'Description must be a string',
+    });
+  } else if (description.length < 10) {
+    return res.status(400).json({
+      error: true,
+      message: 'Description must have 5 characters long',
+    });
+  }
+
+  if (!groupId) {
+    return res.status(400).json({ error: true, message: 'Group id must be provided' });
+  }
+
+  try {
+    Group.addMeetup(groupId, { title, description });
+  }
+  catch (e) {
+    return res.status(e.status).json({ error: true, message: 'Meetup cannot be created' });
+  }
+};
+
