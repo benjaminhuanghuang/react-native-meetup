@@ -15,12 +15,10 @@ middlewareConfig(app);
 
 app.use('/api', [MeetupRoutes]);
 
-
 app.listen(PORT, err => {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        console.log(`App listen to port: ${PORT}`);
-    }
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(`App listen to port: ${PORT}`);
+  }
 });
