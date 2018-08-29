@@ -3,14 +3,8 @@ import { addNavigationHelpers } from 'react-navigation';
 import { connect } from 'react-redux';
 
 import { LoginScreen } from '../screens';
-import Navigator from './Navigator';
+import MainNavigator from './MainNavigator';
 
-@connect(
-  state => ({
-    navigation: state.navigation,
-    user: state.user,
-  })
-)
 export default class AppNavigator extends Component {
   state = {}
   render() {
@@ -20,7 +14,7 @@ export default class AppNavigator extends Component {
     });
 
     if (this.props.user.isLogged) {
-      return <Navigator navigation={navigation} />;
+      return <MainNavigator navigation={navigation} />;
     }
 
     return <LoginScreen />;
