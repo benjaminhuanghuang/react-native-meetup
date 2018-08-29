@@ -1,12 +1,7 @@
 import React from 'react';
-import {
-  createStackNavigator,
-  createSwitchNavigator,
-  createBottomTabNavigator
-} from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 
 // import Touchable from '@appandflow/touchable';
-import { MaterialIcons, FontAwesome } from 'react-native-vector-icons';
 // import styled from 'styled-components/native'; 
 
 import Colors from '../constants/Colors';
@@ -16,13 +11,13 @@ import {
   ProfileScreen,
 } from '../screens';
 
-const AddButton = styled(Touchable)`
-  marginRight: 10;
-`;
+// const AddButton = styled(Touchable)`
+//   marginRight: 10;
+// `;
 
-const NavbarDefaultStyle = {
-  backgroundColor: Colors.redColor,
-};
+// const NavbarDefaultStyle = {
+//   backgroundColor: Colors.redColor,
+// };
 
 /*
   3 Tabs on Main screen

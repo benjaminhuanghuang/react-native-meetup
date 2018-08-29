@@ -5,7 +5,7 @@ import { CreateMeetupScreen } from '../screens';
 
 const MainNavigator = createStackNavigator(
   {
-    Home: HomeNavigator,
+    HomeNav: HomeNavigator,
     CreateMeetup: CreateMeetupScreen,
   }, {});
   

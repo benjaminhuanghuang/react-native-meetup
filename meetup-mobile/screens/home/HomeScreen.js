@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { MaterialIcons, FontAwesome } from 'react-native-vector-icons';
+
 // import { connect } from 'react-redux';
 
 import { LoadingScreen } from '../../commons';
-import { MyMeetupsList } from './components';  
+import { MyMeetupsList } from './components';
 
 // import { fetchMyMeetups } from './actions';
 import styles from './styles/HomeScreen';
 
 class HomeScreen extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    // {focused, tintColor}
+    tabBarIcon: ({ focused, tintColor }) => (
+      <FontAwesome name='home' size={25} color={tintColor} />
+    ),
+  })
+
   componentDidMount() {
   }
 
