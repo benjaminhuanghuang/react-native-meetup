@@ -1,59 +1,36 @@
+import Expo, { AppLoading } from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 //
-import { fetchMeetups } from "./constants/api";
+import Colors from './constants/Colors';
+import { fontAssets } from './helpers';
+//
+import Root from './Root';
+
+EStyleSheet.build(Colors);
 
 export default class App extends React.Component {
-  static defaultProps = {
-    fetchMeetups
-  }
-
   state = {
-    loading: false,
-    meetups:[]
+    fontLoaded: false,
+    ready: false,
   }
 
-  async componentDidMount()
-  {
-      this.setState({
-        loading: true
-      });
-      const data = await this.props.fetchMeetups();
-      this.setState(
-        {
-          loading: false,
-          meetups: data.meetups
-        }
-      );
+  componentDidMount() {
+    this._loadAssetsAsync();
+  }
+
+  async _loadAssetsAsync() {
+    await Promise.all(fontAssets);
+
+    this.setState({ fontLoaded: true });
   }
 
   render() {
-    if(this.state.loading)
-    {
-      return (
-        <View style={styles.container}>
-          <ActivityIndicator size="large"/>
-        </View>
-      )  
+    if (!this.state.fontLoaded || !this.state.ready) {
+      return <AppLoading />;
     }
     return (
-      <View style={styles.container}>
-        <Text>Meetup</Text>
-        {
-          this.state.meetups.map((m, i)=>(
-            <Text key={i}>{m.title}</Text>
-          ))
-        }
-      </View>
+      <Root />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
