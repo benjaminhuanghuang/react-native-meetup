@@ -5,17 +5,17 @@ import { connect } from 'react-redux';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 
-import { CreateMeetupForm } from './components';
-import { LoadingScreen } from '../../commons';
-import { createMeetup } from './actions';
+// import { CreateMeetupForm } from './components';
+// import { LoadingScreen } from '../../commons';
+// import { createMeetup } from './actions';
 import styles from './styles/CreateMeetupScreen';
 
-@connect(
-  state => ({
-    meetup: state.createMeetup,
-  }),
-  { createMeetup }
-)
+// @connect(
+//   state => ({
+//     meetup: state.createMeetup,
+//   }),
+//   { createMeetup }
+// )
 export default class CreateMeetupScreen extends Component {
   // state = {
   //   isDateTimePickerVisible: false,

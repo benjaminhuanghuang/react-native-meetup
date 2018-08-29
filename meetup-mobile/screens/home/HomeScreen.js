@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { MaterialIcons, FontAwesome } from 'react-native-vector-icons';
+import { FontAwesome } from 'react-native-vector-icons';
 
 // import { connect } from 'react-redux';
 

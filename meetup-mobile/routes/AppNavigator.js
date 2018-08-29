@@ -20,5 +20,3 @@ export default class AppNavigator extends Component {
     return <LoginScreen />;
   }
 }
-
-export const router = Navigator.router;
