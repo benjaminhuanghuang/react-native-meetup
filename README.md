@@ -6,7 +6,7 @@
 
 ## Sever side setup
 ```
-    npm i babel-polyfill babel-preset-env babel-register -S   # support ES6
+    npm i babel-polyfill babel-preset-env babel-register babel-plugin-transform-object-rest-spread -S   # support ES6
 
     npm i express morgan body-parser -S
 
@@ -19,6 +19,11 @@
 ## ESLint
 ```
     npm i -D eslint-config-equimper
+```
+- ESLint command
+```
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src"
 ```
 
 ## Auth
