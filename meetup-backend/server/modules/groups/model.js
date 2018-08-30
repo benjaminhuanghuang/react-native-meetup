@@ -24,7 +24,7 @@ const GroupShema = new Schema({
 }, { timestamps: true }); // Add updateAt and createAt field
 
 // Create a meetup and add it to the meetups array in the group
-GroupShema.static.addMeetup = async function (id, args) {
+GroupShema.statics.addMeetup = async function (id, args) {
   const Meetup = mongoose.model('Meetup');
   const meetup = await new Meetup({ ...args, group: id });
   // found the group with the id provide in the url
