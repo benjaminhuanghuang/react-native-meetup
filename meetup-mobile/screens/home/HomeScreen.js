@@ -19,7 +19,7 @@ import { fetchMyMeetups } from './actions';
   { fetchMyMeetups }
 )
 class HomeScreen extends Component {  // eslint-disable-line
-  static navigationOptions = () => ({
+  static navigationOptions = ({ navigation }) => ({
     // {focused, tintColor}
     tabBarIcon: ({ tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
@@ -31,7 +31,7 @@ class HomeScreen extends Component {  // eslint-disable-line
       const style = { backgroundColor: Colors.redColor };
       const right = (
         <View>
-          <Button transparent >
+          <Button transparent onPress={() => navigation.navigate('CreateMeetup')}>
             <Icon name="md-add-cricle" style={{ fontSize: 30, color: Colors.whiteColor }} />
           </Button>
         </View>

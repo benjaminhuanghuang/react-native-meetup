@@ -4,19 +4,43 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
+import { FontAwesome } from 'react-native-vector-icons';
+import { Button, Icon } from 'native-base';
 
 import { CreateMeetupForm } from './components';
 import { LoadingScreen } from '../../commons';
 import { createMeetup } from './actions';
+import Colors from '../../constants/Colors';
 import styles from './styles/CreateMeetupScreen';
 
-// @connect(
-//   state => ({
-//     meetup: state.createMeetup,
-//   }),
-//   { createMeetup }
-// )
+@connect(
+  state => ({
+    meetup: state.createMeetup,
+  }),
+  { createMeetup }
+)
 export default class CreateMeetupScreen extends Component {
+
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Create a new Meetup',
+
+    tabBarIcon: ({ tintColor }) => (
+      <FontAwesome name='home' size={25} color={tintColor} />
+    ),
+
+    header: ({ goBack }) => {
+      const style = { backgroundColor: Colors.redColor };
+      const titleStyle = { color: Colors.whiteColor };
+      const left = (
+        <Button transparent onPress={() => goBack()}>
+          <Icon name="md-close" style={{ fontSize: 30, color: Colors.whiteColor }} />
+        </Button>
+
+      );
+      return { style, titleStyle, left };
+    },
+  });
+
   // state = {
   //   isDateTimePickerVisible: false,
   //   date: moment(),

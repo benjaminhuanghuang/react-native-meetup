@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 
 import { TextInputWithValidations } from '../../../commons';
 import { createMeetupValidations } from '../validations';
-import Colors from '../../../../constants/Colors';
+import Colors from '../../../constants/Colors';
 import styles from './styles/CreateMeetupForm';
 
 const CreateMeetupForm = ({
