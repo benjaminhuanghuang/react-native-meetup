@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { FontAwesome } from 'react-native-vector-icons';
 
 // import { connect } from 'react-redux';
-
+import Colors from '../../constants/Colors';
 import { LoadingScreen } from '../../commons';
 import { MyMeetupsList } from './components';
 
@@ -16,6 +16,9 @@ class HomeScreen extends Component {
     tabBarIcon: ({ focused, tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
     ),
+    header: {
+      style: { backgroundColor: Colors.redColor },
+    },
   })
 
   componentDidMount() {

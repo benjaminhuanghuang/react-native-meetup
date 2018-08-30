@@ -37,7 +37,7 @@ const HomeNavigator = createBottomTabNavigator({
     animationEnabled: false,
     tabBarOptions: {
       showLabel: false,
-      showIcon: true,
+      showIcon: true, // for android
       inactiveTintColor: Colors.blackBlueColor,
       activeTintColor: Colors.redColor,
       pressColor: Colors.redColor,

@@ -1,7 +1,10 @@
 import { AppLoading } from 'expo';
 import React from 'react';
-import EStyleSheet from 'react-native-extended-stylesheet';
 //
+import { Provider } from 'react-redux';
+import store from './redux/store';
+//
+import EStyleSheet from 'react-native-extended-stylesheet';
 import Colors from './constants/Colors';
 import { fontAssets } from './helpers';
 //
@@ -26,11 +29,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (!this.state.fontLoaded || !this.state.ready) {
-      return <AppLoading />;
-    }
+    // if (!this.state.fontLoaded || !this.state.ready) {
+    //   return <AppLoading />;
+    // }
     return (
-      <AppNavigator />
+      <Provider store={store}>
+        <AppNavigator />
+      </Provider>
+
     );
   }
 }
