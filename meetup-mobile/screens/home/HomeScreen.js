@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
+// Redux
+import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import { FontAwesome } from 'react-native-vector-icons';
-
-// import { connect } from 'react-redux';
 import Colors from '../../constants/Colors';
+import styles from './styles/HomeScreen';
+//
 import { LoadingScreen } from '../../commons';
 import { MyMeetupsList } from './components';
 
-// import { fetchMyMeetups } from './actions';
-import styles from './styles/HomeScreen';
+import { fetchMyMeetups } from './actions';
 
-class HomeScreen extends Component {
-  static navigationOptions = ({ navigation }) => ({
+@connect(
+  state => ({
+    myMeetups: state.home.myMeetups,
+  }),
+  { fetchMyMeetups }
+)
+class HomeScreen extends Component {  // eslint-disable-line
+  static navigationOptions = () => ({
     // {focused, tintColor}
-    tabBarIcon: ({ focused, tintColor }) => (
+    tabBarIcon: ({ tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
     ),
     header: {
@@ -21,11 +28,16 @@ class HomeScreen extends Component {
     },
   })
 
+  static defaultProp = {
+
+  }
+
   componentDidMount() {
+    // call action
+    this.props.fetchMyMeetups();
   }
 
   render() {
-    console.log(this.props);
     const {
       myMeetups: {
         isFetched,
@@ -43,7 +55,6 @@ class HomeScreen extends Component {
         </View>
       );
     }
-
     return (
       <View style={styles.root}>
         <View style={styles.topContainer}>
