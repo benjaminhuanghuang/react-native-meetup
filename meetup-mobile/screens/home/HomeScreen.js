@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import { FontAwesome } from 'react-native-vector-icons';
+import { Button, Icon } from 'native-base';
 import Colors from '../../constants/Colors';
 import styles from './styles/HomeScreen';
 //
@@ -23,8 +24,19 @@ class HomeScreen extends Component {  // eslint-disable-line
     tabBarIcon: ({ tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
     ),
-    header: {
-      style: { backgroundColor: Colors.redColor },
+    // header: {
+    //   style: { backgroundColor: Colors.redColor },
+    // },
+    header: () => {
+      const style = { backgroundColor: Colors.redColor };
+      const right = (
+        <View>
+          <Button transparent >
+            <Icon name="md-add-cricle" style={{ fontSize: 30, color: Colors.whiteColor }} />
+          </Button>
+        </View>
+      );
+      return { style, right };
     },
   })
 

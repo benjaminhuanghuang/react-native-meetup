@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
-import { autoRehydrate } from 'redux-persist';
+// import { autoRehydrate } from 'redux-persist';
 import { createLogger } from 'redux-logger';
 
 import reducers from './reducers';
@@ -18,5 +18,5 @@ if (__DEV__) { // eslint-disable-line
 export default createStore(
   reducers,
   undefined, // init state
-  compose(applyMiddleware(...middlewares), autoRehydrate()),
+  compose(applyMiddleware(...middlewares)),
 );
