@@ -7,6 +7,14 @@ const MainNavigator = createStackNavigator(
   {
     HomeNav: HomeNavigator,
     CreateMeetup: CreateMeetupScreen,
-  }, {});
-  
+  }, {
+    initialRouteName: 'HomeNav',
+    navigationOptions: {
+      // headerStyle: {
+      //   backgroundColor: '#ccc',
+      // },
+      // title: 'adsv',
+    },
+  });
+
 export default MainNavigator;

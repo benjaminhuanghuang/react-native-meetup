@@ -12,7 +12,7 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
   },
   bottomContainer: {
-    flex: 0.9,
+    flex: 0.8,
   },
   iconAdd: {
     marginRight: '3%',

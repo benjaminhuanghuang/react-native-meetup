@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // Redux
 import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { Icon, Button } from 'native-base';
 import { FontAwesome } from 'react-native-vector-icons';
-import { Button, Icon } from 'native-base';
 import Colors from '../../constants/Colors';
 import styles from './styles/HomeScreen';
 //
@@ -20,25 +20,16 @@ import { fetchMyMeetups } from './actions';
 )
 class HomeScreen extends Component {  // eslint-disable-line
   static navigationOptions = ({ navigation }) => ({
+    title: "abce",
     // {focused, tintColor}
     tabBarIcon: ({ tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
     ),
-    // header: {
-    //   style: { backgroundColor: Colors.redColor },
-    // },
-    header: () => {
-      const style = { backgroundColor: Colors.redColor };
-      const right = (
-        <View>
-          <Button transparent onPress={() => navigation.navigate('CreateMeetup')}>
-            <Icon name="md-add-cricle" style={{ fontSize: 30, color: Colors.whiteColor }} />
-          </Button>
-        </View>
-      );
-      return { style, right };
-    },
-  })
+    headerRight: (
+      <Text>dddddd</Text>
+    ),
+    tabBarVisible: true, // show tab bar
+  });
 
   static defaultProp = {
 
