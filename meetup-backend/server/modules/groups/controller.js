@@ -102,7 +102,6 @@ export const createGroupMeetup = async (req, res) => {
     const { meetup } = await Group.addMeetup(groupId, { title, description });
     return res.status(201).json({ error: false, meetup });
   } catch (e) {
-    console.log("error--------",e);
     return res.status(400).json({ error: true, message: 'Meetup cannot be created!' });
   }
 };
