@@ -14,7 +14,7 @@ if (Platform.OS !== 'ios') {
 
 axios.defaults.baseURL = url;
 
-const fakeGroupId = '591b9773d5b6d46d0a597ccf';
+const fakeGroupId = '5b8829a3539d803a24e7108d';
 
 class MeetupApi {
   constructor() {

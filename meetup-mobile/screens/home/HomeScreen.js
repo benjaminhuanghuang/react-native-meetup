@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // Redux
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { FontAwesome } from 'react-native-vector-icons';
 import { Button, Icon } from 'native-base';
 import Colors from '../../constants/Colors';

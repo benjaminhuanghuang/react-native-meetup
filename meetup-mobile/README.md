@@ -9,7 +9,9 @@
 search "Montserrat" at fonts.google.com
 donwload and copy font files
 
-## Redux
+## Redux [Part 7]
 
 
-## Redux From
+## Redux From [Part 8]
+
+## From validataion
