@@ -20,7 +20,8 @@ const styles = EStyleSheet.create({
   meetupCard: {
     height: 200,
     width: 175,
-    marginHorizontal: '1.5%',
+    // marginHorizontal: '10%', does not work
+    marginHorizontal: 5,
     backgroundColor: '$redColor',
   },
   meetupCardTopContainer: {
