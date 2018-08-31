@@ -18,8 +18,18 @@ donwload and copy font files
 
 
 
-## Redux From [Part 8]
+## Redux From and Validation [Part 8]
 ```
     yarn add redux-form
 ```
-## From validataion
+```
+import { reducer as form } from 'redux-form';
+
+import { Field, reduxForm } from 'redux-form';
+
+
+export default reduxForm({
+  form: 'createMeetup',
+  validate: createMeetupValidations,
+})(CreateMeetupForm);
+```

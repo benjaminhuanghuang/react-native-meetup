@@ -2,6 +2,7 @@ export const createMeetupValidations = values => {
   const errors = {};
   const requiredFields = ['title', 'description'];
   const needLonger = 'Need to be longer';
+  
   requiredFields.forEach(field => {
     if (!values[field]) {
       errors[field] = 'Required';

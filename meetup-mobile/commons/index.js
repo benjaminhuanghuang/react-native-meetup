@@ -1,7 +1,7 @@
 import LoadingScreen from './LoadingScreen';
-// import TextInputWithValidations from './TextInputWithValidations';
+import TextInputWithValidations from './TextInputWithValidations';
 
 export {
   LoadingScreen,
-  // TextInputWithValidations,
+  TextInputWithValidations,
 };

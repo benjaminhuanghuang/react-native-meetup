@@ -53,7 +53,12 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
   }
   return Object.assign({
     headerTitle: routeName,
-    headerStyle: { backgroundColor: Colors.$redColor },
+    headerTitleStyle: { 
+      color: Colors.$whiteColor,
+    },
+    headerStyle: { 
+      backgroundColor: Colors.$redColor,
+    },
   }, screenNavOption);
 };
 

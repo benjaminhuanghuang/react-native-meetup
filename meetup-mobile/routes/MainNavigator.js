@@ -10,10 +10,6 @@ const MainNavigator = createStackNavigator(
   }, {
     initialRouteName: 'HomeNav',
     navigationOptions: {
-      // headerStyle: {
-      //   backgroundColor: '#ccc',
-      // },
-      // title: 'adsv',
     },
   });
 

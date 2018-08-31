@@ -6,7 +6,7 @@ const styles = EStyleSheet.create({
     alignItems: 'center',
   },
   iconClose: {
-    marginLeft: '3%',
+    marginLeft: 5,
   },
 });
 
