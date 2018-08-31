@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // Redux
 import { connect } from 'react-redux';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Icon, Button } from 'native-base';
 import { FontAwesome } from 'react-native-vector-icons';
 import Colors from '../../constants/Colors';
@@ -20,13 +20,9 @@ import { fetchMyMeetups } from './actions';
 )
 class HomeScreen extends Component {  // eslint-disable-line
   static navigationOptions = ({ navigation }) => ({
-    title: "abce",
     // {focused, tintColor}
     tabBarIcon: ({ tintColor }) => (
       <FontAwesome name='home' size={25} color={tintColor} />
-    ),
-    headerRight: (
-      <Text>dddddd</Text>
     ),
     tabBarVisible: true, // show tab bar
   });

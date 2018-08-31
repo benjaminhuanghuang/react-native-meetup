@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
+import { MaterialIcons } from 'react-native-vector-icons';
 
 // import Touchable from '@appandflow/touchable';
 // import styled from 'styled-components/native'; 
 
 import Colors from '../constants/Colors';
+import styles from '../screens/home/styles/HomeScreen';
+
 import {
   HomeScreen,
   NotificationsScreen,
@@ -40,7 +43,9 @@ HomeNavigator.navigationOptions = ({ navigation }) => {
     case 'Home':
       screenNavOption = {
         headerRight: (
-          <Text>Button</Text>
+          <TouchableOpacity style={styles.iconAdd} onPress={() => navigation.navigate('CreateMeetup')}>
+            <MaterialIcons name="add-circle" size={30} color="#fff" />
+          </TouchableOpacity>
         ),
       };
       break;

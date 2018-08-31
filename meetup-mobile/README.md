@@ -17,6 +17,9 @@ donwload and copy font files
 ## Redux [Part 7]
 
 
-## Redux From [Part 8]
 
+## Redux From [Part 8]
+```
+    yarn add redux-form
+```
 ## From validataion

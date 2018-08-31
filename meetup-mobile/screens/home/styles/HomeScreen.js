@@ -15,7 +15,7 @@ const styles = EStyleSheet.create({
     flex: 0.8,
   },
   iconAdd: {
-    marginRight: '3%',
+    marginRight: 5,
   },
 });
 
