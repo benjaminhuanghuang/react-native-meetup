@@ -6,7 +6,7 @@ const styles = EStyleSheet.create({
     width: '90%',
   },
   item: {
-    marginVertical: '2%',
+    marginVertical: 2,
   },
   buttonCreate: {
     position: 'absolute',

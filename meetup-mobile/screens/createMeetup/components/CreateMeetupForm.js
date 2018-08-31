@@ -29,7 +29,7 @@ const CreateMeetupForm = ({
       name="description"
       label="Description"
       multiline
-      selectionColor={Colors.redColor}
+      selectionColor={Colors.$redColor}
       containerStyle={styles.item}
     />
     <View style={styles.item}>
@@ -42,7 +42,7 @@ const CreateMeetupForm = ({
     </View>
     <View style={styles.buttonCreate}>
       <Button
-        backgroundColor={Colors.blackBlueColor}
+        backgroundColor={Colors.$blackBlueColor}
         title="Create Meetup"
         raised
         fontFamily="montserrat"
