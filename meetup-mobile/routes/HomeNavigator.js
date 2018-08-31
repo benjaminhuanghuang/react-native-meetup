@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
 
 // import Touchable from '@appandflow/touchable';
@@ -29,24 +30,26 @@ const HomeNavigator = createBottomTabNavigator({
   Home: HomeScreen,
   Notifications: NotificationsScreen,
   Profile: ProfileScreen,
-}, {
-  initialRouteName: 'Home',
-  navigationOptions:
-  {
-    swipeEnabled: false,
-    animationEnabled: false,
-    tabBarOptions: {
-      showLabel: false,
-      showIcon: true, // for android
-      inactiveTintColor: Colors.blackBlueColor,
-      activeTintColor: Colors.redColor,
-      pressColor: Colors.redColor,
-      indicatorStyle: { backgroundColor: Colors.redColor },
-      style: {
-        backgroundColor: Colors.whiteColor,
-      },
-    },
-  },
-});
+}, { initialRouteName: 'Home' });
+
+HomeNavigator.navigationOptions = ({ navigation }) => {
+  // https://reactnavigation.org/docs/en/navigation-options-resolution.html#a-stack-contains-a-tab-navigator-and-you-want-to-set-the-title-on-the-stack-header
+  const { routeName } = navigation.state.routes[navigation.state.index];
+  let screenNavOption = {};
+  switch (routeName) {
+    case 'Home':
+      screenNavOption = {
+        headerRight: (
+          <Text>Button</Text>
+        ),
+      };
+      break;
+    default:
+  }
+  return Object.assign({
+    headerTitle: routeName,
+    headerStyle: { backgroundColor: Colors.$redColor },
+  }, screenNavOption);
+};
 
 export default HomeNavigator;
