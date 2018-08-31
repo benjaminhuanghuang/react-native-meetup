@@ -9,8 +9,8 @@ const MyMeetupsList = ({ meetups }) => (
     </View>
     <View style={styles.contentContainer}>
       <ScrollView horizontal>
-        {meetups.map((meetup, i) => (
-          <View key={i} style={styles.meetupCard}>
+        {meetups.map((meetup) => (
+          <View key={meetup._id} style={styles.meetupCard}>
             <View style={styles.meetupCardTopContainer}>
               <Text style={styles.meetupCardTitle}>
                 {meetup.title}
