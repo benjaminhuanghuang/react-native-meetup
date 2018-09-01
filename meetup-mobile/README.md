@@ -9,6 +9,10 @@
 search "Montserrat" at fonts.google.com
 donwload and copy font files
 
+## Pre-load assets
+```
+```
+
 ## UI Element [Part 7]
 - native-base
 - react-native-elements

@@ -29,14 +29,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    // if (!this.state.fontLoaded || !this.state.ready) {
-    //   return <AppLoading />;
-    // }
+    // || !this.state.ready
+    if (!this.state.fontLoaded) {
+      return <AppLoading />;
+    }
     return (
       <Provider store={store}>
         <AppNavigator />
       </Provider>
-
     );
   }
 }

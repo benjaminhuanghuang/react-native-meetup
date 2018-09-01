@@ -22,7 +22,7 @@ const FlexContainer = styled.View`
 `;
 
 const MeetupText = styled.Text`
-  color: ${Colors.redColor};
+  color: ${Colors.$redColor};
   fontSize: 18;
   fontFamily: montserratBold;
 `;
