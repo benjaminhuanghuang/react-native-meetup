@@ -9,10 +9,10 @@ import { login } from './actions';
 
 import { LoadingScreen } from '../../commons';
 
-import Fonts from '../../../constants/Fonts';
-import Colors from '../../../constants/Colors';
-import fbConfig from '../../../constants/fbConfig';
-import googleConfig from '../../../constants/googleConfig';
+import Fonts from '../../constants/Fonts';
+import Colors from '../../constants/Colors';
+import fbConfig from '../../constants/fbConfig';
+import googleConfig from '../../constants/googleConfig';
 
 const FlexContainer = styled.View`
   flex: 1;
