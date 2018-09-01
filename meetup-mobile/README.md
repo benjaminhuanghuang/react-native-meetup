@@ -11,12 +11,32 @@ donwload and copy font files
 
 ## Pre-load assets
 ```
+async _loadAssetsAsync() {
+    await Promise.all(fontAssets);
+
+    this.setState({ fontLoaded: true });
+}
 ```
 
-## UI Element [Part 7]
+## UI Element [Part 7, 9]
 - native-base
+
 - react-native-elements
 
+- styled-components
+```
+const FlexContainer = styled.View`
+  flex: 1;
+  justifyContent: center;
+  alignItems: center;
+  alignSelf: stretch;
+`;
+
+
+<FlexContainer>
+    <Text style={Fonts.authWelcomeTitle}>Welcome!</Text>
+</FlexContainer>
+```
 
 ## Redux [Part 7]
 
