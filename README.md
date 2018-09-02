@@ -6,7 +6,7 @@
 
 ## Sever side setup
 ```
-    npm i babel-polyfill babel-preset-env babel-register babel-plugin-transform-object-rest-spread -S   # support ES6
+    npm i babel-polyfill babel-preset-env babel-register babel-plugin-transform-object-rest-spread -S   # support ES6 [Old style]
 
     npm i express morgan body-parser -S
 

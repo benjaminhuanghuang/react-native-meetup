@@ -41,6 +41,21 @@ require('./server');
   "build:watch":"babel -w --out-dir=dist ./server "
 ```
 
+## Controller Template
+```
+export const ControllerFun = async(req, res) => {
+  const {..args } = req.body;
+
+  try {
+
+  } catch(e) {
+    return res.status(200).json({
+      error: false
+    })
+  }
+}
+```
+
 ## Auth, Passport, JWT
 - setup
 ```
