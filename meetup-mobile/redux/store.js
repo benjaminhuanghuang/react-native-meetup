@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
-// import { autoRehydrate } from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { createLogger } from 'redux-logger';
 
 import reducers from './reducers';
@@ -15,8 +16,15 @@ if (__DEV__) { // eslint-disable-line
   middlewares.push(createLogger());
 }
 
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
 export default createStore(
-  reducers,
+  persistedReducer,
   undefined, // init state
   compose(applyMiddleware(...middlewares)),
 );

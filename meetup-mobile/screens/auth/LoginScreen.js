@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Facebook, Google } from 'expo';
-import { Text } from 'react-native';
+import { Text, Alert } from 'react-native';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
@@ -38,9 +38,14 @@ const Button = styled.TouchableOpacity`
   flex: 1;
   backgroundColor: ${({ color }) => color};
   flexDirection: row;
-  paddingHorizontal: 10;
+  paddingHorizontal: 10; 
 `;
 
+@connect(
+  state => ({
+    isLoading: state.user.isLoading,
+  }),
+  { login })
 export default class LoginScreen extends Component {
   state = {};
 
@@ -61,6 +66,9 @@ export default class LoginScreen extends Component {
     });
 
     if (type === 'success') {
+      // Test
+      // const resp = await fetch('https://graph.facebook.com/me?access_token=${token}');
+      // Alert.alert('Logged In', `Hi ${(await resp.json()).name}`);
       this.props.login(token, 'facebook');
     } else {
       throw new Error('Something wrong with facebook auth!');
@@ -75,6 +83,8 @@ export default class LoginScreen extends Component {
       });
 
       if (result.type === 'success') {
+        // Test
+        // Alert.alert('Logged In with google', `Hi ${result.accessToken}`);
         this.props.login(result.accessToken, 'google');
       } else {
         return { cancelled: true };
@@ -109,11 +119,11 @@ export default class LoginScreen extends Component {
             </FlexContainer>
           </FlexContainer>
           <BottomButtonWrapper>
-            <Button color={Colors.$signupButtonBackgroundColor} onPress={() => this._onLoginPress('google')}>
+            <Button color='#db3236' onPress={() => this._onLoginPress('google')}>
               <Text style={Fonts.buttonAuth}>Connect with</Text>
               <MaterialCommunityIcons name="google" size={30} color="#fff" />
             </Button>
-            <Button color={Colors.$signinButtonBackgroundColor} onPress={() => this._onLoginPress('facebook')}>
+            <Button color='#3b5998' onPress={() => this._onLoginPress('facebook')}>
               <Text style={Fonts.buttonAuth}>Connect with</Text>
               <MaterialCommunityIcons name="facebook" size={30} color="#fff" />
             </Button>

@@ -57,3 +57,21 @@ export default reduxForm({
   validate: createMeetupValidations,
 })(CreateMeetupForm);
 ```
+
+
+## Google API
+- Create Credentials
+
+
+## Log in Reducer
+
+
+## redux-persist [Part 15]
+```
+redux-persist
+```
+
+Using redux-persist in store
+```
+import { persistStore, persistReducer } from 'redux-persist';
+```
