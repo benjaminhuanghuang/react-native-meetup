@@ -4,19 +4,17 @@
   "description": "- React-Native & Node Tutorial - Build a Meetup app",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon index.js"
+    "dev": "NODE_ENV=development nodemon dist/index.js",
+    "build:watch": "babel -w --out-dir=dist ./server",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "^5.2.10",
+    "mongoose": "^5.2.12",
     "morgan": "^1.9.0",
     "axios": "^0.18.0",
     "passport": "^0.4.0",
@@ -24,7 +22,10 @@
     "jsonwebtoken": "^8.3.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint-config-equimper": "^2.2.2",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "rimraf":"^2.6.2"
   }
 }
