@@ -3,7 +3,7 @@ import { Facebook, Google } from 'expo';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
 import { login } from './actions';
 
@@ -86,7 +86,7 @@ export default class LoginScreen extends Component {
 
   render() {
     if (this.props.isLoading) {
-      return <LoadingScreen color={Colors.redColor} />;
+      return <LoadingScreen color={Colors.$redColor} />;
     }
     return (
       <FlexContainer>
@@ -109,17 +109,11 @@ export default class LoginScreen extends Component {
             </FlexContainer>
           </FlexContainer>
           <BottomButtonWrapper>
-            <Button
-              color="#db3236"
-              onPress={() => this._onLoginPress('google')}
-            >
+            <Button color={Colors.$signupButtonBackgroundColor} onPress={() => this._onLoginPress('google')}>
               <Text style={Fonts.buttonAuth}>Connect with</Text>
               <MaterialCommunityIcons name="google" size={30} color="#fff" />
             </Button>
-            <Button
-              color="#3b5998"
-              onPress={() => this._onLoginPress('facebook')}
-            >
+            <Button color={Colors.$signinButtonBackgroundColor} onPress={() => this._onLoginPress('facebook')}>
               <Text style={Fonts.buttonAuth}>Connect with</Text>
               <MaterialCommunityIcons name="facebook" size={30} color="#fff" />
             </Button>
