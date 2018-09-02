@@ -63,7 +63,10 @@ export const ControllerFun = async(req, res) => {
 ```
 - passport
 
-- 
+- Auth
+```
+  routes.get('/meetups', requireJwtAuth, MeetupController.getAllMeetups);
+```
 
 ## Api Usage
 - Create meetup
