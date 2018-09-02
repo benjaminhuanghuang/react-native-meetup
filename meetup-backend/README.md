@@ -13,8 +13,9 @@
 
 ## Support ES6
 - Old Style
+setup
 ```
-npm i babel-polyfill babel-preset-env babel-register babel-plugin-transform-object-rest-spread -D   # support ES6 [Old style]
+npm i babel-polyfill babel-preset-env babel-register babel-plugin-transform-object-rest-spread -D   # support ES6
 ```
 index.js 
 ```
@@ -26,7 +27,8 @@ Script
 ```
   "dev": "NODE_ENV=development nodemon index.js",
 ```
-- Build
+- Babel transpile
+setup
 ```
   npm i babel-preset-env babel-plugin-transform-object-rest-spread -D
 ```
@@ -38,8 +40,6 @@ Script
   "dev": "NODE_ENV=development nodemon dist/index.js",
   "build:watch":"babel -w --out-dir=dist ./server "
 ```
-
-
 
 ## Auth, Passport, JWT
 - setup
